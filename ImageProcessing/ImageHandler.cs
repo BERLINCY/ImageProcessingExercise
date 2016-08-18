@@ -55,8 +55,15 @@ namespace ImageProcessing
 
         public static void DoProcess(ref byte[,] rArray, ref byte[,] gArray, ref byte[,] bArray)
         {
-            //YOUR CODE HERE 
-
+            for (int x = 0; x < gArray.GetLength(0); x++)
+            {
+                for (int y = 0; y < gArray.GetLength(1); y++)
+                {
+                    rArray[x, y] = FilterGotham.R[rArray[x, y]];
+                    gArray[x, y] = FilterGotham.G[gArray[x, y]];
+                    bArray[x, y] = FilterGotham.B[bArray[x, y]];
+                }
+            }
         }
     }
 }
